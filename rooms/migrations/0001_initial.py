@@ -36,9 +36,9 @@ class Migration(migrations.Migration):
             name='Suggestion',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('movie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.movie')),
-                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.room')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.user')),
+                ('movie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='rooms.movie')),
+                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='rooms.room')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='rooms.user')),
             ],
         ),
     ]

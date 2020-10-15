@@ -16,7 +16,7 @@ class Movie(models.Model):
 class Room(models.Model):
     
     def __str__(self):
-        return self.id
+        return "Room %s" % self.id
 
 class Suggestion(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
