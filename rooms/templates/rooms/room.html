@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+    <body>
+        <h1>Welcome to room {{ room_id }}</h1>
+        {% if suggestions %}
+            {% for suggestion in suggestions %}
+                {{ suggestion }}
+                <br/>
+            {% endfor %}
+        {% endif %}
+
+    </body>
+</html>
