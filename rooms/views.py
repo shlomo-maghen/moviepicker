@@ -1,6 +1,6 @@
-from django.shortcuts import get_list_or_404, render
+from django.shortcuts import get_object_or_404, render
 
-from .models import Suggestion
+from .models import Room, Suggestion
 
 
 def home(request):
@@ -13,8 +13,9 @@ def new_room(request):
 
 
 def room(request, room_id):
+    get_object_or_404(Room, pk=room_id)
     context = {
-        'suggestions': get_list_or_404(Suggestion.objects.filter(room_id=room_id)),
+        'suggestions': Suggestion.objects.filter(room_id=room_id),
         'room_id': room_id,
     }
     return render(request, 'rooms/room.html', context)
